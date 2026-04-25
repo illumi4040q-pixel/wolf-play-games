@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wolf Play Games</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0f2c, #001f4d);
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: #001233;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px #00aaff;
+}
+
+header h1 {
+    margin: 5px;
+    color: #00aaff;
+}
+
+/* PESQUISA */
+.search-box {
+    margin-top: 10px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* CONTAINER */
+.container {
+    padding: 15px;
+}
+
+/* ANÚNCIO */
+.ad {
+    background: #0d1b4c;
+    margin: 15px 0;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* CARDS */
+.game {
+    background: #0d1b4c;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #008cff;
+}
+
+.game h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.game p {
+    font-size: 14px;
+}
+
+/* BOTÃO */
+a.download {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #00aaff;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* RESPONSIVO */
+@media (min-width: 600px) {
+    .game {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .game div {
+        max-width: 70%;
+    }
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #001233;
+    font-size: 12px;
+    color: #aaa;
+}
+</style>
+
+<script>
+function searchGames() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let games = document.getElementsByClassName("game");
+
+    for (let i = 0; i < games.length; i++) {
+        let title = games[i].innerText.toLowerCase();
+        games[i].style.display = title.includes(input) ? "" : "none";
+    }
+}
+</script>
+</head>
+
+<body>
+
+<header>
+    <h1>🐺 Wolf Play Games</h1>
+    <div class="search-box">
+        <input type="text" id="search" onkeyup="searchGames()" placeholder="Pesquisar jogos...">
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="ad">
+        💰 Espaço para anúncio (Google AdSense aqui)
+    </div>
+
+    <div class="game">
+        <div>
+            <h2>🎮 Nome do Jogo 1</h2>
+            <p>500MB | Ação</p>
+        </div>
+        <a class="download" href="LINK_MEDIAFIRE_AQUI" target="_blank">Baixar</a>
+    </div>
+
+    <div class="game">
+        <div>
+            <h2>🚗 Nome do Jogo 2</h2>
+            <p>1GB | Corrida</p>
+        </div>
+        <a class="download" href="LINK_MEDIAFIRE_AQUI" target="_blank">Baixar</a>
+    </div>
+
+    <div class="ad">
+        💰 Espaço para anúncio
+    </div>
+
+    <div class="game">
+        <div>
+            <h2>🧠 Nome do Jogo 3</h2>
+            <p>300MB | Puzzle</p>
+        </div>
+        <a class="download" href="LINK_MEDIAFIRE_AQUI" target="_blank">Baixar</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Wolf Play Games
+</footer>
+
+</body>
+</html>
